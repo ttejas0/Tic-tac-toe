@@ -50,7 +50,15 @@ const TicTacToe = ()=> {
    // switch between X and O based on player turn
     setPlayer(player === "X" ? "O" : "X");
   };
-
+   
+  const handleReset = () => {
+    if (!winner && winner !== "draw") return;
+    setSquare(Array(9).fill(null));
+    setPlayer("X");
+    setStrikeClass("hidden");
+    setWinner("");
+  };
+  
   return (
     <div className='py-8'>
       <Board 
@@ -59,9 +67,10 @@ const TicTacToe = ()=> {
       strikeClass={strikeClass}
       player={player}
       winner={winner}
+      reset={handleReset}
       />
     </div>
   )
 }
 
-export default TicTacToe
+export default TicTacToe 
