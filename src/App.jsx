@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import Reset from './components/Reset'
-import ScoreBoard from './components/ScoreBoard'
-
+import React from "react";
+import Reset from "./components/Buttons/Reset";
+import ScoreBoard from "./components/Board/ScoreBoard";
+import TicTacToe from "./components/TicTacToe"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <><div className='min-h-screen flex flex-col items-center justify-center'>
-        <ScoreBoard/>
-        <Reset/>
-    </div>
+    <>
+      <div className="min-h-screen flex flex-col items-center justify-center">
+          <ScoreBoard />
+          <TicTacToe/>
+          <Reset />
+          </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
