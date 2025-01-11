@@ -1,0 +1,71 @@
+/* Strike for rows */
+.strike-row-1 {
+    top: 16.67%; /* Align to the first row */
+    left: 20px; /* Offset for visual centering */
+    width: 90%; /* Adjust width for visual effect */
+    height: 10px; /* Thickness of the strike */
+    border-radius: 12px;
+  }
+  
+  .strike-row-2 {
+    top: 50%; /* Align to the second row */
+    left: 20px;
+    width: 90%;
+    height: 10px;
+    border-radius: 12px;
+  }
+  
+  .strike-row-3 {
+    top: 83.33%; /* Align to the third row */
+    left: 20px;
+    width: 90%;
+    height: 10px;
+    border-radius: 12px;
+  }
+  
+  /* Strike for columns */
+  .strike-column-1 {
+    top: 28px; /* Offset for visual centering */
+    left: 15.67%; /* Align to the first column */
+    width: 10px; /* Thickness of the strike */
+    height: 90%; /* Adjust height for visual effect */
+    border-radius: 12px;
+  }
+  
+  .strike-column-2 {
+    top: 28px;
+    left: 49%; /* Align to the second column */
+    width: 10px;
+    height: 90%;
+    border-radius: 12px;
+  }
+  
+  .strike-column-3 {
+    top: 28px;
+    left: 82.33%; /* Align to the third column */
+    width: 10px;
+    height: 90%;
+    border-radius: 12px;
+  }
+  
+  /* Strike for diagonals */
+  .strike-diagonal-1 {
+    top: 35px;
+    left: 40px;
+    width: 120%; /* Diagonal width */
+    height: 10px;
+    border-radius: 12px;
+    transform: rotate(45deg); /* Diagonal rotation */
+    transform-origin: top left;
+  }
+  
+  .strike-diagonal-2 {
+    top: 40px;
+    right: 40px;
+    width: 118%; /* Diagonal width */
+    height: 10px;
+    border-radius: 12px;
+    transform: rotate(-45deg); /* Diagonal rotation */
+    transform-origin: top right;
+  }
+  

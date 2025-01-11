@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import React from 'react'
 import Board from './Board/Board'
 
@@ -13,19 +13,19 @@ const checkWinner = (square, setStrikeClass, setWinner) =>{
     { combo: [1, 4, 7], strikeClass: "strike-column-2"}, 
     { combo: [2, 5, 8], strikeClass: "strike-column-3"}, 
   ];
-  for(const { combo, strikeclass } of winningCombos){
-      const [a,b,c] = combo;
-      if(cells[a] && cells[a] === cells[b] && cells[a] === cells[c]){
-        setStrikeClass(strikeclass);
-        if (cells[a] === "X"){
-          setWinner("X");
-        } else {
-          setWinner("O");
-        }
-        return;
+  for (const { combo, strikeClass } of winningCombos) {
+    const [a, b, c] = combo;
+    if (square[a] && square[a] === square[b] && square[a] === square[c]) {
+      setStrikeClass(strikeClass);
+      if (square[a] === "X") {
+        setWinner("X");
+      } else {
+        setWinner("O");
       }
+      return;
+    }
   }
-  const isDraw = square.every((square) => cell !== nuull);
+  const isDraw = square.every((cell) => cell !== null);
   setWinner(isDraw ? "draw" : null);
 };
 
@@ -44,12 +44,12 @@ const TicTacToe = ()=> {
     newSquare[index] = player;
    // set square array to the new Array
     setSquare(newSquare);
+
+    checkWinner(newSquare, setStrikeClass, setWinner);
+
    // switch between X and O based on player turn
     setPlayer(player === "X" ? "O" : "X");
-  }
-  useEffect(()=>{
-
-  }, [square]);
+  };
 
   return (
     <div className='py-8'>
@@ -57,6 +57,8 @@ const TicTacToe = ()=> {
       square={square} 
       squareClick={handelSquareClick}
       strikeClass={strikeClass}
+      player={player}
+      winner={winner}
       />
     </div>
   )
