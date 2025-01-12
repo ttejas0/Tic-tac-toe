@@ -64,14 +64,14 @@ const Board = ({square, squareClick, strikeClass, player, winner, reset }) => {
         <div className={`absolute w-full bg-red-600 z-40 ${strikeClass}`}></div>
       </div>
       {winner && (
-        <div className="flex justify-center mt-16 border-4 rounded-lg p-4 bg-Custom-Slate-Blue">
-          <h3 className="text-4xl font-extrabold">
+        <div className="flex justify-center mt-5 border-4 rounded-lg p-4 bg-Custom-Slate-Blue">
+          <h3 className="text-l font-extrabold">
             {winner === "draw" ? "Its a Tie" : `Player ${winner} Wins!`}
           </h3>
         </div>
       )}
-      <div className="flex justify-center mt-16 border-4 p-4 text-4xl rounded-lg bg-Custom-Slate-Blue">
-        <button className='text-4xl font-extrabold' onClick={reset}>Reset</button>
+      <div className="flex justify-center mt-5 border-4 p-4 rounded-lg bg-Custom-Slate-Blue">
+        <button className='text-l font-extrabold' onClick={reset}>Reset</button>
       </div>
     </div>
   )

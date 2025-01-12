@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import Board from './Board/Board'
+import ScoreBoard from './Board/ScoreBoard';
 
 const checkWinner = (square, setStrikeClass, setWinner) =>{
   const winningCombos = [
@@ -58,8 +59,12 @@ const TicTacToe = ()=> {
     setStrikeClass("hidden");
     setWinner("");
   };
-  
+
   return (
+    <>
+    <ScoreBoard
+      winner={winner}
+      />
     <div className='py-8'>
       <Board 
       square={square} 
@@ -70,6 +75,7 @@ const TicTacToe = ()=> {
       reset={handleReset}
       />
     </div>
+    </>
   )
 }
 
